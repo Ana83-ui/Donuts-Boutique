@@ -1,0 +1,58 @@
+export const getAllProducts = async () => {
+  const res = await fetch("http://localhost:3000/api/donut");
+  const result = await res.json();
+  console.log(result);
+  return result;
+};
+
+export const getProductById = async (_id) => {
+  const res = await fetch(`http://localhost:3000/api/donut/${_id}`);
+  const result = await res.json();
+  return result;
+};
+
+export const addNewProduct = async (product) => {
+  const res = await fetch("http://localhost:3000/api/donut", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(product),
+  });
+  const result = await res.json();
+  return result;
+};
+
+export const deleteProduct = async (_id) => {
+  const res = await fetch(`http://localhost:3000/api/donut/${_id}`, {
+    method: "DELETE",
+    headers: {
+      "content-type": "application/json",
+    },
+  });
+  const result = await res.json();
+  return result;
+};
+
+export const editProduct = async (_id, updateProduct) => {
+  const res = await fetch(`http://localhost:3000/api/donut/${_id}`, {
+    method: "PATCH",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(updateProduct),
+  });
+  const result = await res.json();
+  return result;
+};
+
+export const favoriteProduct = async (_id) => {
+  const res = await fetch(`http://localhost:3000/api/donut/favorite/${_id}`, {
+    method: "PUT",
+    headers: {
+      "content-type": "application/json",
+    },
+  });
+  const result = await res.json();
+  return result;
+};
