@@ -28,4 +28,8 @@ package-lock.json*
 =======
 node_modules*
 package-lock.json*
+<<<<<<< HEAD
 >>>>>>> cd88c9c39c814ce3ceadc651dab5d6654680467c
+=======
+>>>>>>> cd88c9c (final commit back)
+>>>>>>> a58eba7bebb7821c18a7912c8caedc9c19831b6b
